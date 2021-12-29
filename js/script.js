@@ -1,4 +1,3 @@
-var content = "";
 window.onload = function () {
   var html = "<option></option>";
   for (var i = 0; i < localStorage.length; i++) {
