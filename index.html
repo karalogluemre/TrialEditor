@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#html").click(function () {
+          $("#html").css("font-size", "120%");
+        }),
+          $("#css").click(function () {
+            $("#css").css("font-size", "120%");
+            $("#html").css("font-size", "100%");
+          }),
+          $("#js").click(function () {
+            $("#js").css("font-size", "120%");
+            $("#css").css("font-size", "100%");
+          }),
+          $("#run").click(function () {
+            $("#js").css("font-size", "100%");
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <section>
+      <div class="editor-container">
+        <div class="editor">
+          <div><span>HTML</span></div>
+          <textarea
+            name="html"
+            id="html"
+            class="htmlCode"
+            contenteditable="true"
+            placeholder="Enter your HTML code"
+          ></textarea>
+        </div>
+        <div class="editor">
+          <div><span>CSS</span></div>
+          <textarea
+            name="css"
+            id="css"
+            contenteditable="true"
+            placeholder="Enter your CSS code"
+          ></textarea>
+        </div>
+        <div class="editor">
+          <div><span>Js</span></div>
+          <textarea
+            name="js"
+            id="js"
+            contenteditable="true"
+            placeholder="Enter your JS code"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="headersection">
+        <div class="leftheadersection">
+          <button
+            class="buttonruncode"
+            id="run"
+            onclick="run()"
+            style="
+              background-color: green;
+              color: white;
+              padding: 5px 15px;
+              text-align: center;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              width: 100px;
+              border-radius: 5px;
+            "
+          >
+            Çalıştır
+          </button>
+          <span> Projenizin Adı : </span>
+          <input type="text" id="projectName" />
+          <button onclick="saveProject()">Kaydet</button>
+        </div>
+        <div class="rightheadersection">
+          <select onchange="populateEditor()" id="projects"></select>
+        </div>
+      </div>
+      <iframe src="" id="output" frameborder="0"></iframe>
+    </section>
+   <script src="./js/script.js"></script>
+  </body>
+</html>
