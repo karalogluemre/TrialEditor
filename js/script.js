@@ -9,19 +9,6 @@ window.onload = function () {
     alert(url + " adresinde " + hataSatiri + ". satırda hata oluştu. Hata: " + hata);
 }
 };
-window.addEventListener("keydown", function (e) {
-  if ((event.ctrlKey || event.metaKey) && (e.key == "s" || e.key == "S")) {
-    e.preventDefault();
-    var filename = this.prompt("Dosya Adı: ");
-    var a = this.document.createElement("a");
-    a.href =
-      "data:application/octet-stream," +
-      encodeURIComponent("<html>" + content + "</html>");
-    a.download = filename;
-    a.click();
-  }
-});
-
 function run(){
   let htmlCode=document.querySelector(".editor #html").value;
   let cssCode="<style>"+document.querySelector(".editor #css").value+"</style>";
